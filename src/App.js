@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+
+import WordTable from './components/wordTable/wordTable';
+import WordInput from './components/wordInput/wordInput';
+
+/* routing */
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './App.css';
 
 function App() {
+
+  const [word, setWord] = useState(null)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Trackplan Digital Word Test</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<WordInput setWord={setWord} />} />
+          <Route path="/table" element={<WordTable word={word} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
