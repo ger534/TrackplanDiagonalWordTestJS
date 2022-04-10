@@ -14,7 +14,7 @@ function WordTable(props) {
         if(!props.word){
             navigate("/")
         }
-    }, [props.word])
+    }, [props.word, navigate])
 
     return (
         <>
