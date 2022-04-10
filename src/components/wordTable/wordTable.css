@@ -1,0 +1,8 @@
+#word-table{
+    display: flex;
+    justify-content: center;
+}
+
+#back-button{
+    display: flex;
+}
